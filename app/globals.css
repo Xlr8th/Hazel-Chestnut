@@ -1,27 +1,51 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+/* FONT VARIABLES */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-body: var(--font-montserrat);
+  --font-heading: var(--font-merriweather);
+  --font-accent: var(--font-raleway);
+  --font-ui: var(--font-roboto);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--font-montserrat), serif;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.nav-item, .btn {
+  font-family: var(--font-raleway), sans-serif;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+span, a {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+
+:root { 
+  --background-color: #FFF7ED; /* Background color for the entire website, including individual sections */
+  --default-color: #272129; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #6B4F8C; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #6B4F8C; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #FFF7ED; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #FFFF; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --color-text-secondary: #4B4B4B; /* Secondary Text */
+  --bg-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+:root {
+  --nav-color: #272129;  /* The default color of the main navmenu links */
+  --hover-color:#c8a2c8; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #FFF7ED; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #FFF7ED; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color:#6B4F8C; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+:root {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -30,13 +54,215 @@ body {
   margin: 0;
 }
 
+body {
+  font-family: var(--font-body), sans-serif;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
 a {
-  color: inherit;
+  color: var(--contrast-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--hover-color);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+img.logo {
+  width: 100px;
+}
+
+.header .header-social-links {
+  padding-right: 15px;
+  margin-left: 5rem;
+}
+
+.header .header-social-links .link {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  padding: 0 .5rem;
+  display: inline-block;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.header .header-social-links .link:hover {
+  color: var(--accent-color);
+}
+
+.header .header-social-links .link i {
+  line-height: 0px;
+}
+
+
+header {
+  display: flex;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 997;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.hamburger {
+  height: 32px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  padding: 2px 0;
+  transition: 0.5s ease;
+  border-radius: 5px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.hamburger span {
+  display: block;
+  background-color: var(--contrast-color);
+  border-radius: 5px;
+  height: 3px;
+  width: 30px;
+  margin: 5px 5px;
+  transition: 0.5s ease;
+}
+
+.checkbox-toggle {
+  display: none;
+}
+
+/* When the checkbox is checked, display the menu */
+.checkbox-toggle:checked ~ nav.main-menu {
+  display: block;
+  transform: translateY(-10px);
+  transition: 0.5s ease;
+  
+}
+/* Change hamburger icon to X (close) when clicked */
+.checkbox-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 5px;
+}
+.checkbox-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.checkbox-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -9px;
+}
+
+nav.main-menu {
+  position: absolute;
+  top: 80px;
+  left: 2.5vw;
+  box-shadow: var(--bg-shadow);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .1rem;
+  width: 95%;
+  margin: 5px auto;
+  transition: 0.5 ease all;
+  display: none;
+  z-index: 98;
+}
+
+nav.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+}
+
+nav.main-menu ul li {
+  margin: 20px;
+}
+
+.nav-item {
+  padding: 10px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  text-align: center;
+  font-weight: 400;
+  color: var(--nav-color);
+  
+}
+
+@media screen and (min-width:992px) {
+  header {
+    box-shadow: var(--shadow);
+  }
+  .header .header-social-links {
+  padding-right: 0;
+  margin-left: 0;
+}
+
+  img.logo {
+  width: 120px;
+  }
+
+  nav.main-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.5 ease all;
+    padding: 0;
+    width: fit-content;
+    box-shadow: none !important;
+  }
+
+  nav.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 10px;
+  }
+
+  nav.main-menu ul li {
+    margin: 0;
+    
+  }
+
+  .nav-item {
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  
+}
+  .checkbox-toggle {
+  display: none;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.carousel-indicators .active {
+  background-color: var(--background-color);
+}
+
