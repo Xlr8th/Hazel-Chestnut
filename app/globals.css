@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-raleway), sans-serif;
 }
 
-span, a {
+span, a, p {
   font-family: var(--font-roboto), sans-serif;
 }
 
