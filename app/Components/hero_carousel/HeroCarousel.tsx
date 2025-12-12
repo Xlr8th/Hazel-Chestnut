@@ -19,8 +19,8 @@ interface Slide {
 const blogSlides: Slide[] = [
   {
     src: "/blog/blog-hero-1.webp",
-    category: "Business",
-    title: "The Future of Remote Work and Digital Transformation",
+    category: "Word",
+    title: "Building Your Life on the Unshakable Word of God",
     author: "Mark Johnson",
     date: "12 Jan, 2024",
     readTime: "4 Minute Read",
@@ -29,8 +29,8 @@ const blogSlides: Slide[] = [
   },
   {
     src: "/blog/blog-hero-2.webp",
-    category: "Tech",
-    title: "How AI is Shaping Modern Businesses",
+    category: "Family",
+    title: "Creating a Christ-Centered Home in a Busy World",
     author: "Jane Doe",
     date: "18 Feb, 2024",
     readTime: "5 Minute Read",
@@ -39,14 +39,35 @@ const blogSlides: Slide[] = [
   },
   {
     src: "/blog/blog-hero-3.webp",
+    category: "Parenting",
+    title: "Raising Godly Children in a Modern Culture",
+    author: "John Smith",
+    date: "25 Mar, 2024",
+    readTime: "6 Minute Read",
+    views: "1.8k views",
+    link: "/blog-details"
+  },
+  {
+    src: "/blog/blog-hero-4.webp",
+    category: "Marriage",
+    title: "Strengthening Your Marriage Through Faith and Grace",
+    author: "John Smith",
+    date: "25 Mar, 2024",
+    readTime: "6 Minute Read",
+    views: "1.8k views",
+    link: "/blog-details"
+  },
+  {
+    src: "/blog/blog-hero-5.webp",
     category: "Lifestyle",
-    title: "Remote Work: Tips for Productivity and Balance",
+    title: "Living a Purpose-Driven Life That Honors God",
     author: "John Smith",
     date: "25 Mar, 2024",
     readTime: "6 Minute Read",
     views: "1.8k views",
     link: "/blog-details"
   }
+
 ];
 
 export default function HeroCarousel() {
@@ -59,6 +80,7 @@ export default function HeroCarousel() {
               src={slide.src}
               alt={slide.title}
               fill
+              sizes="100vw"
               className={styles.heroImage}
               style={{ objectFit: "cover" }}
             />
