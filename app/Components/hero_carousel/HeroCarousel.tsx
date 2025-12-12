@@ -20,7 +20,7 @@ const blogSlides: Slide[] = [
   {
     src: "/blog/blog-hero-1.webp",
     category: "Word",
-    title: "Building Your Life on the Unshakable Word of God",
+    title: "Standing Firm on God’s Word",
     author: "Mark Johnson",
     date: "12 Jan, 2024",
     readTime: "4 Minute Read",
@@ -30,7 +30,7 @@ const blogSlides: Slide[] = [
   {
     src: "/blog/blog-hero-2.webp",
     category: "Family",
-    title: "Creating a Christ-Centered Home in a Busy World",
+    title: "Building a Christ-Centered Home",
     author: "Jane Doe",
     date: "18 Feb, 2024",
     readTime: "5 Minute Read",
@@ -40,7 +40,7 @@ const blogSlides: Slide[] = [
   {
     src: "/blog/blog-hero-3.webp",
     category: "Parenting",
-    title: "Raising Godly Children in a Modern Culture",
+    title: "Raising Children Who Love God",
     author: "John Smith",
     date: "25 Mar, 2024",
     readTime: "6 Minute Read",
@@ -60,7 +60,7 @@ const blogSlides: Slide[] = [
   {
     src: "/blog/blog-hero-5.webp",
     category: "Lifestyle",
-    title: "Living a Purpose-Driven Life That Honors God",
+    title: "Living with Purpose in Christ",
     author: "John Smith",
     date: "25 Mar, 2024",
     readTime: "6 Minute Read",
