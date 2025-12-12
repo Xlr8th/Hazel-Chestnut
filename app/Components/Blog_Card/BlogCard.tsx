@@ -14,7 +14,7 @@ interface CardProps {
 const BlogCard = ({badge, author, date, heading, text, readTime, blogImg, authorImg}: CardProps) => {
   return (
     <div>
-      <article className="blog-card">
+      <article className="blog-card" data-aos="fade-up">
         <div className="blog-image">
             <img src={blogImg} alt="Blog Image" loading="lazy" />
             <div className="category-badge">{badge}</div>
