@@ -4,6 +4,7 @@ import './globals.css'
 import AOSWrapper from './AOSWrapper'
 import HandleNavClick from './HandleNavClick'
 import { Montserrat, Raleway, Merriweather, Roboto } from 'next/font/google';
+import Footer from './Components/Footer/Footer'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -72,6 +73,10 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
             </header>
             
             {children}
+
+            <Footer 
+            tagline='Healing Hearts'
+            />
 
           </HandleNavClick>
         </AOSWrapper>

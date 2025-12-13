@@ -1,5 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import HeroCarousel from "./Components/hero_carousel/HeroCarousel";
 import Title from "./Components/title_section/Title";
 import BlogCard from "./Components/Blog_Card/BlogCard";
