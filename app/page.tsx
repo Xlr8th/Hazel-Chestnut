@@ -17,22 +17,26 @@ export default function Home() {
       <div className="container mb-5">
         <div className="row row-cols-1 row-cols-lg-2 g-4">
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Word"
-              author="Alexander Thompson"
-              date="February 12, 2025"
-              heading="Building Your Life on the Unshakable Word of God"
-              text="God’s Word remains a firm foundation in a shifting world. Discover how Scripture anchors your faith and guides everyday decisions with clarity."
+              category="word"
+              slug="casting-crowns"
+              author="Edith Ahkere Oise"
+              date="December 29, 2025"
+              heading="Casting Crowns: A Life of Surrendered Worship"
+              text="True worship begins when we lay down our authority, achievements, and victories before God. Explore the meaning of casting crowns and living fully yielded to His will."
               readTime="8 min read"
-              blogImg="/blog/blog-post-square-1.webp"
-              authorImg="/person/person-m-5.webp"
+              blogImg="/blog/casting-crown.webp"
+              authorImg="/person/edith.jpg"
             />
           </div>
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Family"
+              category="word"
+              slug="casting-crowns"
               author="Alexander Thompson"
               date="February 12, 2025"
               heading="Creating a Christ-Centered Home in a Busy World"
@@ -43,9 +47,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Marriage"
+              category="word"
+              slug="casting-crowns"
               author="Alexander Thompson"
               date="February 12, 2025"
               heading="Strengthening Your Marriage Through Faith and Love"
@@ -56,9 +62,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Parenting"
+              category="word"
+              slug="casting-crowns"
               author="Alexander Thompson"
               date="February 12, 2025"
               heading="Raising Godly Children in a Changing Culture"
@@ -69,9 +77,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Lifestyle"
+              category="word"
+              slug="casting-crowns"
               author="Alexander Thompson"
               date="February 12, 2025"
               heading="Living a Purpose-Driven Life That Honors Christ"
@@ -82,9 +92,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="col">
+          <div className="col d-flex">
             <BlogCard 
               badge="Opinion"
+              category="word"
+              slug="casting-crowns"
               author="Alexander Thompson"
               date="February 12, 2025"
               heading="Finding God’s Perspective in a World Full of Noise"
@@ -96,11 +108,6 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
-
-
-      <div>
-        
       </div>
     </>
   );

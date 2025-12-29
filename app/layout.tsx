@@ -61,7 +61,7 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
                   <ul>
                     <li><Link className='nav-item' href='#home'>Home</Link></li>
                     <li><Link className='nav-item' href='#About'>About</Link></li>
-                    <li><Link className='nav-item' href='#Categories'>Categories</Link></li>
+                    <li><Link className='nav-item' href='/blog'>Categories</Link></li>
                     <li><Link className='nav-item' href='#Novel'>Books</Link></li>
                     
                     <li><Link className='nav-item' href='#contact'>Contact</Link></li>

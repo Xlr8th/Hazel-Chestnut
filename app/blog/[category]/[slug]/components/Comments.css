@@ -1,0 +1,168 @@
+/*--------------------------------------------------------------
+# Blog Comments Section
+--------------------------------------------------------------*/
+.blog-comments {
+  max-width: 900px;
+  margin: 80px auto 0 auto;
+}
+
+.blog-comments .comments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.blog-comments .comments-header .title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.blog-comments .comments-header .comments-stats {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 8px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-comments .comments-header .count {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.blog-comments .comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.blog-comments .comment-box {
+  display: flex;
+  gap: 20px;
+}
+
+.blog-comments .avatar-wrapper img {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.blog-comments .comment-content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.blog-comments .comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.blog-comments .comment-header h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.blog-comments .comment-header .time {
+  font-size: 14px;
+  color: #777;
+}
+
+.blog-comments .comment-body p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.blog-comments .comment-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.blog-comments .comment-actions button {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.blog-comments .comment-actions button:hover {
+  color: #0d6efd;
+}
+
+/*--------------------------------------------------------------
+# Blog Comment Form Section
+--------------------------------------------------------------*/
+.blog-comment-form {
+  max-width: 900px;
+  margin: 60px auto;
+}
+
+.blog-comment-form form {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.blog-comment-form .section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-comment-form .section-header h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.blog-comment-form .section-header p {
+  font-size: 15px;
+  color: #777;
+}
+
+.blog-comment-form .form-group {
+  margin-bottom: 20px;
+}
+
+.blog-comment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.blog-comment-form .form-control {
+  width: 100%;
+  height: 48px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.blog-comment-form textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.blog-comment-form .btn-submit {
+  margin-top: 10px;
+  padding: 12px 32px;
+  border-radius: 50px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+

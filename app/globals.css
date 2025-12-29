@@ -15,13 +15,27 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), serif;
 }
 
-.nav-item, .btn {
+.nav-item, .btn, .btn-submit {
   font-family: var(--font-raleway), sans-serif;
 }
 
-span, a, p {
+span, a, p, label, li {
   font-family: var(--font-roboto), sans-serif;
 }
+
+/* For input fields */
+input::placeholder {
+  font-family: var(--font-roboto), sans-serif;
+  font-style: italic;
+  color: #888; 
+}
+
+/* For textarea */
+textarea::placeholder {
+  font-family: var(--font-roboto), sans-serif;
+  color: #555;
+}
+
 
 
 :root { 
@@ -53,7 +67,9 @@ span, a, p {
   padding: 0;
   margin: 0;
 }
-
+.color {
+  color: var(--accent-color);
+}
 body {
   font-family: var(--font-body), sans-serif;
   color: var(--default-color);
@@ -264,5 +280,17 @@ nav.main-menu ul li {
 
 .carousel-indicators .active {
   background-color: var(--background-color);
+}
+
+.blog-content p {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.blog-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 

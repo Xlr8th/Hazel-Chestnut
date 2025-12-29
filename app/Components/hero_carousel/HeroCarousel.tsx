@@ -18,14 +18,14 @@ interface Slide {
 // Typed array of slides
 const blogSlides: Slide[] = [
   {
-    src: "/blog/blog-hero-1.webp",
+    src: "/blog/casting-crown.webp",
     category: "Word",
-    title: "Standing Firm on God’s Word",
-    author: "Mark Johnson",
-    date: "12 Jan, 2024",
+    title: "Casting Crowns",
+    author: "Edith Ahkere Oise",
+    date: "29 Dec, 2025",
     readTime: "4 Minute Read",
     views: "2.3k views",
-    link: "/blog-details"
+    link: "/blog/word/casting-crowns"
   },
   {
     src: "/blog/blog-hero-2.webp",

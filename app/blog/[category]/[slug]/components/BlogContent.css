@@ -1,0 +1,16 @@
+.blog-hero {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    min-height: 45vh;
+  }
+}
+.custom-border-color {
+    border-left: 3px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: var(--contrast-color);
+}
