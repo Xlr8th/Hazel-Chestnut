@@ -13,8 +13,8 @@ export const blogPosts: BlogPost[] = [
     category: "WORD",
     slug: "casting-crowns",
     title: "Casting Crowns",
-    author: "Alexander Thompson",
-    date: "February 12, 2025",
+    author: "Edith Ahkere Oise",
+    date: "December 29, 2025",
     image: "/blog/casting-crown.webp",
     content: `The Book of Revelation 4:10–11 gives us one of the most humbling pictures in Scripture:
 
