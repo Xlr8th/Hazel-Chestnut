@@ -16,7 +16,9 @@ export const blogPosts: BlogPost[] = [
     author: "Alexander Thompson",
     date: "February 12, 2025",
     image: "/blog/casting-crown.webp",
-    content: `Revelation 4:10–11 gives us one of the most humbling pictures in Scripture: “The twenty-four elders fall before Him who sits on the throne and worship Him who lives forever and ever, and cast their crowns before the throne, saying:
+    content: `The Book of Revelation 4:10–11 gives us one of the most humbling pictures in Scripture:
+
+    Revelation 4:10–11: “The twenty-four elders fall before Him who sits on the throne and worship Him who lives forever and ever, and cast their crowns before the throne, saying:
     You are worthy, O Lord, To receive glory and honour and power; For You created all things, And by Your will they exist and were created.”
 
     There’s something deeply arresting about that scene. These elders aren’t empty-handed. They have crowns. They have status. They have authority. Yet the moment they truly see God for who He is, the only response that makes sense is surrender.

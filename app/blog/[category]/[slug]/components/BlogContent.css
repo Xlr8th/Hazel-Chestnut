@@ -8,6 +8,9 @@
   .blog-hero {
     min-height: 45vh;
   }
+  .NumIcon {
+    font-size: 2rem;
+  }
 }
 .custom-border-color {
     border-left: 3px solid var(--accent-color);

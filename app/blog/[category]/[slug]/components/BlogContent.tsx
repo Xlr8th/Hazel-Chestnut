@@ -77,8 +77,8 @@ const BlogContent: React.FC<BlogContentProps> = ({
 
       {/* Main Content */}
       <section className="container my-5">
-        <div className="mx-auto" >
-          <div className="blog-content fs-5 lh-lg">
+        <div className="m-0 p-0 " >
+          <div className="blog-content border p-0 fs-5 lh-lg">
             {blocks.map((block, index) => {
               const lines = block.split("\n");
               const firstLine = lines[0].trim();
@@ -86,13 +86,13 @@ const BlogContent: React.FC<BlogContentProps> = ({
 
               /* ---------------- SCRIPTURE ---------------- */
               if (
-                firstLine.startsWith("Revelation") ||
-                firstLine.startsWith("“…for You created all things")
+                firstLine.startsWith("“…for You created all things") ||
+                firstLine.startsWith("Revelation 4")
               ) {
                 return (
                   <blockquote
                     key={index}
-                    className="p-4 my-4 custom-border-color"
+                    className="p-4 mb-4 custom-border-color"
                   >                    
                     <p className="mb-2 fw-semibold color">
                       <i className="bi bi-book-half me-2"></i> Scripture
@@ -108,16 +108,16 @@ const BlogContent: React.FC<BlogContentProps> = ({
               /* ---------------- SONG REFLECTION ---------------- */
               if (firstLine.startsWith("Every song that I sing")) {
                 return (
-                  <div key={index} className="custom-border-color p-4 my-4">
+                  <div key={index} className="custom-border-color p-4 mb-4">
                     <p className="fw-semibold mb-2 color">
                       <i className="bi bi-music-note-beamed me-2"></i> Song
                       Reflection
                     </p>
-                    <div className="fst-italic text-secondary lh-sm">
+                    <div className="fst-italic text-secondary lh-sm small">
                       {block.split("\n").map((line, i) => (
                         <div key={i}>
                           <small>{line}</small>
-                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const BlogContent: React.FC<BlogContentProps> = ({
                 return (
                   <div key={index} className="mt-3">
                     <h4 className="fw-semibold mb-2 d-flex align-items-center">
-                      <NumberIcon className="me-2 color" />
+                      <NumberIcon className="me-2 color NumIcon" />
                       {title}
                     </h4>
 
