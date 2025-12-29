@@ -78,7 +78,7 @@ const BlogContent: React.FC<BlogContentProps> = ({
       {/* Main Content */}
       <section className="container my-5">
         <div className="m-0 p-0 " >
-          <div className="blog-content border p-0 fs-5 lh-lg">
+          <div className="blog-content p-0 fs-5 lh-lg">
             {blocks.map((block, index) => {
               const lines = block.split("\n");
               const firstLine = lines[0].trim();
