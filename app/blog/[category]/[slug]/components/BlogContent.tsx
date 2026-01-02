@@ -58,10 +58,10 @@ const BlogContent: React.FC<BlogContentProps> = ({
         }}
       >
         <div className="container pb-5">
-          <h2 className="text-white fw-bold display-5 mb-3">
-            <FaCrown className="me-2 color" />
+          <FaCrown className="me-2 color" />
+          <h1 className="text-white fw-bold display-5 mb-3">            
             {title}
-          </h2>
+          </h1>
           <p className="text-light mb-0 d-flex flex-wrap align-items-center gap-3">
             <span>
               <i className="bi bi-person-fill me-1 color"></i>
