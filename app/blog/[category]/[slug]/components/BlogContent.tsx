@@ -58,7 +58,7 @@ const BlogContent: React.FC<BlogContentProps> = ({
         }}
       >
         <div className="container pb-5">
-          <FaCrown className="me-2 color" />
+          <FaCrown className="me-2 mb-0 h2 color" />
           <h1 className="text-white fw-bold display-5 mb-3">            
             {title}
           </h1>
