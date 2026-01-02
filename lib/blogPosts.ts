@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
 
     He interrupted her plans to establish His.
 
-    ##SECTION:When God Rearranges Our Future
+    ##SECTION2:When God Rearranges Our Future
 
     God didn’t ask to be added to Mary’s future.
     He asked to redefine it.
@@ -130,6 +130,7 @@ export const blogPosts: BlogPost[] = [
     It was a sacrifice.
 
     Mary’s plans did not include:
+
     - Being pregnant before her wedding day
     - Public misunderstanding
     - Risking her reputation
@@ -141,6 +142,7 @@ export const blogPosts: BlogPost[] = [
     ##SECTION:This Is What It Means to Cast Your Crown
 
     Casting your crown is laying down:
+
     - Your rights
     - Your dreams
     - Your reputation
@@ -152,7 +154,7 @@ export const blogPosts: BlogPost[] = [
     God’s will does not compete with our glory.
     It defines it.
 
-    ##SECTION:The Question That Remains
+    ##SECTION2:The Question That Remains
 
     Can we interrupt our plans to take up His?
     Can we surrender our ambitions when they collide with God’s purposes?

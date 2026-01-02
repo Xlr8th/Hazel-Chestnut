@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCrown, FaCheckDouble } from "react-icons/fa";
+import { FaCrown, FaCheckDouble, FaStar } from "react-icons/fa";
 import { MdLooksOne, MdLooksTwo, MdLooks3, MdLooks4, MdLooks5 } from "react-icons/md";
 import './BlogContent.css'
 
@@ -58,10 +58,10 @@ const BlogContent: React.FC<BlogContentProps> = ({
         }}
       >
         <div className="container pb-5">
-          <h1 className="text-white fw-bold display-5 mb-3">
+          <h2 className="text-white fw-bold display-5 mb-3">
             <FaCrown className="me-2 color" />
             {title}
-            </h1>
+          </h2>
           <p className="text-light mb-0 d-flex flex-wrap align-items-center gap-3">
             <span>
               <i className="bi bi-person-fill me-1 color"></i>
@@ -87,7 +87,8 @@ const BlogContent: React.FC<BlogContentProps> = ({
               /* ---------------- SCRIPTURE ---------------- */
               if (
                 firstLine.startsWith("“…for thou hast") ||
-                firstLine.startsWith("“The twenty-four")
+                firstLine.startsWith("“The twenty-four")||
+                firstLine.startsWith("“Behold,")
               ) {
                 return (
                   <blockquote
@@ -115,7 +116,20 @@ const BlogContent: React.FC<BlogContentProps> = ({
                     </div>
                   </div>
                 );
-              }              
+              }
+              
+              /* ---------------- SECTION2 ---------------- */
+              if (firstLine.startsWith("##SECTION2:")) {
+                const title = firstLine.replace("##SECTION2:", "").trim();
+                return (
+                  <section key={index} className="mb-3">
+                    <h3 className="fw-semibold m-0 ">
+                      <FaStar className="me-2" />
+                      {title}
+                    </h3>
+                  </section>
+                );
+              }
 
               /* ---------------- SECTION ---------------- */
               if (firstLine.startsWith("##SECTION:")) {
