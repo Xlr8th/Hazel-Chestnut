@@ -123,6 +123,7 @@ header {
   z-index: 997;
   justify-content: space-around;
   width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hamburger {
@@ -217,9 +218,7 @@ nav.main-menu ul li {
 }
 
 @media screen and (min-width:992px) {
-  header {
-    box-shadow: var(--shadow);
-  }
+  
   .header .header-social-links {
   padding-right: 0;
   margin-left: 0;

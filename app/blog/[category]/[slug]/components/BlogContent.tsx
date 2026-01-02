@@ -59,16 +59,16 @@ const BlogContent: React.FC<BlogContentProps> = ({
       >
         <div className="container pb-5">
           <h1 className="text-white fw-bold display-5 mb-3">
-            <FaCrown className="me-2" />
+            <FaCrown className="me-2 color" />
             {title}
             </h1>
           <p className="text-light mb-0 d-flex flex-wrap align-items-center gap-3">
             <span>
-              <i className="bi bi-person-fill me-1"></i>
+              <i className="bi bi-person-fill me-1 color"></i>
               <span className="fw-semibold">{author}</span>
             </span>
             <span>
-              <i className="bi bi-calendar-event me-1"></i>
+              <i className="bi bi-calendar-event me-1 color"></i>
               {date}
             </span>
           </p>
@@ -86,17 +86,14 @@ const BlogContent: React.FC<BlogContentProps> = ({
 
               /* ---------------- SCRIPTURE ---------------- */
               if (
-                firstLine.startsWith("“…for You created all things") ||
-                firstLine.startsWith("Revelation 4")
+                firstLine.startsWith("“…for thou hast") ||
+                firstLine.startsWith("“The twenty-four")
               ) {
                 return (
                   <blockquote
                     key={index}
                     className="p-4 mb-4 custom-border-color"
-                  >                    
-                    <p className="mb-2 fw-semibold color">
-                      <i className="bi bi-book-half me-2"></i> Scripture
-                    </p>
+                  > 
                     <p className="mb-0 fst-italic text-secondary lh-base">
                       <small>{block}</small>                      
                     </p>                    
@@ -109,10 +106,6 @@ const BlogContent: React.FC<BlogContentProps> = ({
               if (firstLine.startsWith("Every song that I sing")) {
                 return (
                   <div key={index} className="custom-border-color p-4 mb-4">
-                    <p className="fw-semibold mb-2 color">
-                      <i className="bi bi-music-note-beamed me-2"></i> Song
-                      Reflection
-                    </p>
                     <div className="fst-italic text-secondary lh-sm small">
                       {block.split("\n").map((line, i) => (
                         <div key={i}>

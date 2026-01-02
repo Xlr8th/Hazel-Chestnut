@@ -34,16 +34,16 @@ export default function Home() {
 
           <div className="col d-flex">
             <BlogCard 
-              badge="Family"
+              badge="Word"
               category="word"
-              slug="casting-crowns"
-              author="Alexander Thompson"
-              date="February 12, 2025"
-              heading="Creating a Christ-Centered Home in a Busy World"
-              text="With life pulling in every direction, keeping Christ at the center becomes intentional. Learn practical ways to bring faith, love, and unity into your home."
-              readTime="8 min read"
-              blogImg="/blog/blog-post-square-2.webp"
-              authorImg="/person/person-m-6.webp"
+              slug="casting-crowns-2"
+              author="Edith Ahkere Oise"
+              date="January 2, 2026"
+              heading="Casting Crowns Pt2: Surrendering to God's Plans Like Mary"
+              text="Mary’s obedience teaches us the power of surrendering our dreams, plans, and ambitions to God’s greater purpose. Discover what it truly means to lay down your crown."
+              readTime="7 min read"
+              blogImg="/blog/casting-crown-2.webp"
+              authorImg="/person/edith.jpg"
             />
           </div>
 

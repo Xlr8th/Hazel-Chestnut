@@ -38,14 +38,14 @@ const blogSlides: Slide[] = [
     link: "/blog-details"
   },
   {
-    src: "/blog/blog-hero-3.webp",
-    category: "Parenting",
-    title: "Raising Children Who Love God",
-    author: "John Smith",
-    date: "25 Mar, 2024",
-    readTime: "6 Minute Read",
+    src: "/blog/casting-crown-2.webp",
+    category: "Word",
+    title: "Casting Crown 2",
+    author: "Edith Ahkere Oise",
+    date: "2 Jan, 2026",
+    readTime: "7 Minute Read",
     views: "1.8k views",
-    link: "/blog-details"
+    link: "/blog/word/casting-crowns-2"
   },
   {
     src: "/blog/blog-hero-4.webp",
