@@ -24,6 +24,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  // ✅ create a unique key per blog post
+  const commentKey = `${category}-${slug}`;
+
   return (
     <main className="container py-5">
       <BlogContent
@@ -33,7 +36,10 @@ export default async function BlogPostPage({ params }: PageProps) {
         image={post.image}
         content={post.content}
       />
-      <Comments />
+
+
+      {/* ✅ pass unique identifier */}
+      <Comments slug={commentKey} />
     </main>
   );
 }

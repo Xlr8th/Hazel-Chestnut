@@ -93,81 +93,34 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/casting-crown-2.webp",
     content: `When we read Luke 1:38, we often admire Mary’s obedience without fully sitting with the weight of it.
 
-    “Behold, I am the servant of the Lord; let it be to me according to your word.”
-    And just like that, the angel departed.
+    “Behold, I am the servant of the Lord; let it be to me according to your word.” And just like that, the angel departed.
 
-    At first glance, we see the honour. The glory. The privilege.
-    After all, how many women can say they carried the Saviour of the world?
+    At first glance, we see the honour. The glory. The privilege. After all, how many women can say they carried the Saviour of the world? But if we slow down and look beyond the single narrative of “chosen and favoured,” a deeper story emerges; one that requires honest reflection.
 
-    But if we slow down and look beyond the single narrative of “chosen and favoured,” a deeper story emerges.
+    Mary wasn't a distant, untouchable figure. she was a teenager. Betrothed. In love.
+    Yes, she was engaged to a good man; Scripture makes Joseph’s character clear in Matthew 1:19. A man of integrity. Kind. Just.
 
-    Mary was a teenager. Betrothed. In love.
-    Scripture makes Joseph’s character clear in Matthew 1:19. A man of integrity. Kind. Just.
+    Can you imagine being engaged to someone like that? Someone you trust. Someone you love deeply, and one who loves you back? Can you imagine the dreams she must have had? The expectations. The quiet excitement about marriage. The conversations about the wedding. The plans. the future.
 
-    Can you imagine the dreams she must have had?
-    The expectations.
-    The quiet excitement about marriage.
+    Many brides think about these things; the ceremony, the wedding night, the honeymoon, the home they will build. Mary would have been no different. She likely had ideas already forming in her heart. A picture of the life she wanted. The kind of home she hoped to create.
 
-    The wedding.
-    The future.
-    The life she carefully imagined.
+    And then... God knocked. Not gently. Not later. Right then! God stepped into her carefully imagined future and rearranged it; making room for His agenda by asking her to lay down her own. He interrupted her plans to establish His.
 
-    And then God knocked.
-    Not gently.
-    Right then.
+    I think about my own courtship. My husband and I planned to wait for at least a year before having children. We wanted time; time to know each other deeply, time to build true intimacy of heart and purpose in a deeper way, time to build a foundation; to truly become one before adding another life into our home.
 
-    He stepped into her carefully planned future and rearranged it.
+    What if Mary had plans like that too? I am certain her plans did not include being pregnant before her wedding day. They did not include carrying a child in the earliest days of marriage. They most certainly did not include bearing a child that was not biologically her husband’s. I can almost imagine her picturing her wedding attire; beautiful, flowing… and definitely not designed to accommodate a baby bump.
 
-    He interrupted her plans to establish His.
+    Her plans most certainly did not include public misunderstanding. They did not include risking her reputation. What God asked of Mary was not small. It was not easy. It was a sacrifice.
 
-    ##SECTION2:When God Rearranges Our Future
+    God didn’t ask to be added to her future. He asked to rearrange it. He asked to redefine entire life and purpose. This is what it means to cast your crown. It takes someone who has learned to lay down their rights, dreams, reputation, and carefully curated future and still say, “Yes, Lord.”
 
-    God didn’t ask to be added to Mary’s future.
-    He asked to redefine it.
+    Someone who loves God so deeply that nothing feels worth withholding from Him. Someone who has submitted their entire life to Him; trusting that His plans outweigh their own. That was Mary. The blessed mother of our Lord. Mary had learned something many of us struggle with: God’s will does not compete with our glory; it defines it. And now the question turns to us. Can we interrupt our plans to take up His? Can we surrender our ambitions when they collide with God’s purposes?
 
-    What He required was not small.
-    It was not easy.
-    It was a sacrifice.
-
-    Mary’s plans did not include:
-
-    - Being pregnant before her wedding day
-    - Public misunderstanding
-    - Risking her reputation
-    - Carrying a child that was not biologically her husband’s
-
-    Yet she still said,
-    “Yes, Lord.”
-
-    ##SECTION:This Is What It Means to Cast Your Crown
-
-    Casting your crown is laying down:
-
-    - Your rights
-    - Your dreams
-    - Your reputation
-    - Your carefully curated future
-
-    And trusting that God’s plan outweighs your own.
-
-    Mary understood something many of us struggle with:
-    God’s will does not compete with our glory.
-    It defines it.
-
-    ##SECTION2:The Question That Remains
-
-    Can we interrupt our plans to take up His?
-    Can we surrender our ambitions when they collide with God’s purposes?
-
-    Because the truth is simple:
-    There is no true glory from God that is not born out of sacrifice.
-
-    And every crown that truly matters
-    Must first be laid at His feet.
+    Because the truth is simple, though not comfortable: There is no true glory from God that is not born out of sacrifice. And every crown that truly matters. Must first be laid at His feet.
 
     ##FOOTER
     Casting crowns is not about loss.
     It is about trust.
     It is the quiet worship of a surrendered life.`
-      }
+    }
 ];

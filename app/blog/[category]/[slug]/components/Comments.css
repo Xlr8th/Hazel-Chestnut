@@ -4,6 +4,7 @@
 .blog-comments {
   max-width: 900px;
   margin: 80px auto 0 auto;
+  font-family: 'Inter', sans-serif;
 }
 
 .blog-comments .comments-header {
@@ -13,32 +14,14 @@
   margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.blog-comments .comments-header .title {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.blog-comments .comments-header .comments-stats {
-  background: rgba(0, 0, 0, 0.04);
-  padding: 8px 20px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.blog-comments .comments-header .count {
-  font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #333;
 }
 
 .blog-comments .comments-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .blog-comments .comment-box {
@@ -49,14 +32,14 @@
 .blog-comments .avatar-wrapper img {
   width: 60px;
   height: 60px;
-  border-radius: 16px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
 .blog-comments .comment-content {
   background: #ffffff;
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 16px;
+  padding: 20px;
   width: 100%;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
@@ -64,40 +47,62 @@
 .blog-comments .comment-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .blog-comments .comment-header h4 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
+  font-weight: 600;
 }
 
 .blog-comments .comment-header .time {
-  font-size: 14px;
+  font-size: 13px;
   color: #777;
+  font-style: italic;
 }
 
 .blog-comments .comment-body p {
   font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #444;
 }
 
 .blog-comments .comment-actions {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
 }
 
 .blog-comments .comment-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background: transparent;
-  font-size: 14px;
-  color: #666;
   cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
 }
 
 .blog-comments .comment-actions button:hover {
   color: #0d6efd;
+}
+
+.blog-comments .like-count {
+  font-size: 14px;
+  color: #333;
+}
+
+.blog-comments .delete-btn {
+  margin-left: auto;
+  color: #dc3545;
+}
+
+.blog-comments .delete-btn:hover {
+  color: #a71d2a;
 }
 
 /*--------------------------------------------------------------
@@ -111,22 +116,24 @@
 .blog-comment-form form {
   padding: 30px;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .blog-comment-form .section-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .blog-comment-form .section-header h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
 }
 
 .blog-comment-form .section-header p {
-  font-size: 15px;
+  font-size: 14px;
   color: #777;
 }
 
@@ -136,15 +143,15 @@
 
 .blog-comment-form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 500;
 }
 
 .blog-comment-form .form-control {
   width: 100%;
   height: 48px;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
 }
@@ -156,13 +163,27 @@
 
 .blog-comment-form .btn-submit {
   margin-top: 10px;
-  padding: 12px 32px;
+  padding: 12px 36px;
   border-radius: 50px;
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #0d6efd;
+  color: #fff;
   border: none;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+.blog-comment-form .btn-submit:hover {
+  background: #0b5ed7;
+}
 
+/*--------------------------------------------------------------
+# Empty State Text
+--------------------------------------------------------------*/
+.text-muted {
+  font-size: 14px;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+}

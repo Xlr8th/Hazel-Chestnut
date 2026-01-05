@@ -3,6 +3,7 @@ import Link from 'next/link'
 import './globals.css'
 import AOSWrapper from './AOSWrapper'
 import HandleNavClick from './HandleNavClick'
+import AuthLink from './Components/AuthLink/AuthLink'
 import { Montserrat, Raleway, Merriweather, Roboto } from 'next/font/google';
 import Footer from './Components/Footer/Footer'
 
@@ -48,6 +49,7 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
                   <Link href="#" className="facebook link"><i className="bi bi-facebook"></i></Link>
                   <Link href="#" className="instagram link"><i className="bi bi-instagram"></i></Link>
                   <Link href="#" className="linkedin link"><i className="bi bi-linkedin"></i></Link>
+                  <AuthLink />
                 </div>
 
                 <input type="checkbox" id='toggle' className='checkbox-toggle' />

@@ -1,142 +1,210 @@
 "use client";
 
-import React, { useState } from "react";
-import './Comments.css'
+import React, { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
+import { AiOutlineLike, AiFillLike } from "react-icons/ai";
+import { FaTrashAlt } from "react-icons/fa";
+import "./Comments.css";
 
 interface Comment {
+  id: string;
+  user_id?: string;
   name: string;
-  email: string;
-  website: string;
   comment: string;
+  created_at: string;
+  likes: number;
+  liked: boolean;
 }
 
-const Comments: React.FC = () => {
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [form, setForm] = useState<Comment>({
-    name: "",
-    email: "",
-    website: "",
-    comment: "",
-  });
+interface CommentsProps {
+  slug: string;
+}
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+const Comments: React.FC<CommentsProps> = ({ slug }) => {
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [form, setForm] = useState({ comment: "" });
+  const [user, setUser] = useState<any>(null);
+
+  // ✅ 1. Get logged-in user
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setUser(session?.user || null);
+    };
+
+    getUser();
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null);
+    });
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  // ✅ 2. Fetch comments
+  useEffect(() => {
+    const fetchComments = async () => {
+      const { data, error } = await supabase
+        .from("comments")
+        .select("*")
+        .eq("slug", slug)
+        .order("created_at", { ascending: false });
+
+      if (error) console.error(error);
+      else setComments(data.map(c => ({ ...c, likes: 0, liked: false })));
+    };
+
+    fetchComments();
+  }, [slug]);
+
+  // ✅ 3. Post comment
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!user) return alert("Please login to comment!");
+    if (!form.comment.trim()) return;
+
+    const newComment = {
+      slug,
+      name: (user.user_metadata?.full_name as string) || "Anonymous",
+      user_id: user.id,
+      comment: form.comment,
+    };
+
+    const { data, error } = await supabase
+      .from("comments")
+      .insert(newComment)
+      .select()
+      .single();
+
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setComments(prev => [{ ...data, likes: 0, liked: false }, ...prev]);
+    setForm({ comment: "" });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.comment) return;
+  // ✅ 4. Toggle like locally
+  const toggleLike = (id: string) => {
+    setComments(prev =>
+      prev.map(c =>
+        c.id === id ? { ...c, liked: !c.liked, likes: c.liked ? c.likes - 1 : c.likes + 1 } : c
+      )
+    );
+  };
 
-    setComments([...comments, form]);
-    setForm({ name: "", email: "", website: "", comment: "" });
+  // ✅ 5. Delete comment
+  const handleDelete = async (id: string) => {
+    if (!confirm("Are you sure you want to delete this comment?")) return;
+
+    const { error } = await supabase
+      .from("comments")
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setComments(prev => prev.filter(c => c.id !== id));
   };
 
   return (
     <section className="blog-comment-form section">
       <div className="container">
-        <form onSubmit={handleSubmit}>
-          <div className="section-header">
-            <h3>Share Your Thoughts</h3>
-            <p>Your email address will not be published. Required fields are marked *</p>
-          </div>
-
-          <div className="row gy-3">
-            <div className="col-md-6 form-group">
-              <label htmlFor="name">Full Name *</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your full name"
-                className="form-control"
-                value={form.name}
-                onChange={handleChange}
-                required
-              />
+        {/* Form */}
+        {user ? (
+          <form onSubmit={handleSubmit}>
+            <div className="section-header">
+              <h3>Share Your Thoughts</h3>
+              <p>Share your reflections on this post.</p>
             </div>
 
-            <div className="col-md-6 form-group">
-              <label htmlFor="email">Email Address *</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email address"
-                className="form-control"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+            <div className="row gy-3">
+              <div className="col-12 form-group">
+                <textarea
+                  name="comment"
+                  className="form-control"
+                  placeholder="Write your thoughts here..."
+                  rows={4}
+                  value={form.comment}
+                  onChange={e => setForm({ comment: e.target.value })}
+                  required
+                />
+              </div>
 
-            <div className="col-12 form-group">
-              <label htmlFor="website">Website</label>
-              <input
-                type="url"
-                name="website"
-                id="website"
-                placeholder="Your website (optional)"
-                className="form-control"
-                value={form.website}
-                onChange={handleChange}
-              />
+              <div className="col-12 text-center">
+                <button type="submit" className="btn-submit">
+                  Post Comment
+                </button>
+              </div>
             </div>
+          </form>
+        ) : (
+          <p className="text-muted text-center">Sign in to post a comment.</p>
+        )}
 
-            <div className="col-12 form-group">
-              <label htmlFor="comment">Your Comment *</label>
-              <textarea
-                name="comment"
-                id="comment"
-                rows={5}
-                placeholder="Write your thoughts here..."
-                className="form-control"
-                value={form.comment}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-
-            <div className="col-12 text-center">
-              <button type="submit" className="btn-submit">
-                Post Comment
-              </button>
-            </div>
-          </div>
-        </form>
-
-        {/* Display Posted Comments */}
+        {/* Comments List */}
         <div className="blog-comments mt-5">
           <h4 className="comments-header mb-4">{comments.length} Comment(s)</h4>
+
           <div className="comments-container">
-            {comments.map((c, i) => (
-              <div key={i} className="comment-thread">
+            {comments.length === 0 && (
+              <p className="text-muted text-center">No comments yet.</p>
+            )}
+
+            {comments.map(comment => (
+              <div key={comment.id} className="comment-thread">
                 <div className="comment-box">
-                  <div className="comment-wrapper">
-                    <div className="avatar-wrapper">
-                      <img
-                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
-                          c.name
-                        )}&background=random&size=64`}
-                        alt={c.name}
-                      />
+                  <div className="avatar-wrapper">
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                        comment.name
+                      )}&background=random&size=64`}
+                      alt={comment.name}
+                    />
+                  </div>
+
+                  <div className="comment-content">
+                    <div className="comment-header">
+                      <h4>{comment.name}</h4>
+                      <span className="time">
+                        {new Date(comment.created_at).toLocaleString("en-US", {
+                          dateStyle: "medium",
+                          timeStyle: "short",
+                        })}
+                      </span>
                     </div>
-                    <div className="comment-content">
-                      <div className="comment-header">
-                        <div className="user-info">
-                          <h4>{c.name}</h4>
-                          <span className="time-badge">{new Date().toLocaleString()}</span>
-                        </div>
-                      </div>
-                      <div className="comment-body">
-                        <p>{c.comment}</p>
-                        {c.website && (
-                          <p>
-                            <a href={c.website} target="_blank" rel="noopener noreferrer">
-                              Visit website
-                            </a>
-                          </p>
-                        )}
-                      </div>
+
+                    <div className="comment-body">
+                      <p>{comment.comment}</p>
+                    </div>
+
+                    {/* Like & Delete Buttons */}
+                    <div className="comment-actions">
+                      <button
+                        type="button"
+                        className={`like-btn ${comment.liked ? "liked" : ""}`}
+                        onClick={() => toggleLike(comment.id)}
+                      >
+                        {comment.liked ? <AiFillLike /> : <AiOutlineLike />}
+                      </button>
+                      <span className="like-count">{comment.likes}</span>
+
+                      {/* Show delete button only for comment owner */}
+                      {user?.id === comment.user_id && (
+                        <button
+                          type="button"
+                          className="delete-btn"
+                          onClick={() => handleDelete(comment.id)}
+                        >
+                          <FaTrashAlt />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

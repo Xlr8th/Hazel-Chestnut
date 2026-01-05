@@ -117,19 +117,6 @@ const BlogContent: React.FC<BlogContentProps> = ({
                   </div>
                 );
               }
-              
-              /* ---------------- SECTION2 ---------------- */
-              if (firstLine.startsWith("##SECTION2:")) {
-                const title = firstLine.replace("##SECTION2:", "").trim();
-                return (
-                  <section key={index} className="mb-3">
-                    <h3 className="fw-semibold m-0 ">
-                      <FaStar className="me-2" />
-                      {title}
-                    </h3>
-                  </section>
-                );
-              }
 
               /* ---------------- SECTION ---------------- */
               if (firstLine.startsWith("##SECTION:")) {

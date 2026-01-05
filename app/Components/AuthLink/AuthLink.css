@@ -1,0 +1,19 @@
+.auth-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+.auth-link span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.auth-link .btn-link {
+  border: none;
+  background: transparent;
+  color: var(--accent-color, #0d6efd);
+  cursor: pointer;
+  font-weight: 500;
+}
