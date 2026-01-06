@@ -41,7 +41,7 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
             <header className='header d-flex align-items-center position-relative'>
               <div className='menu container position-relative d-flex align-items-center justify-content-between'>
                 <Link href='/' className='text-decoration-none'>
-                  <img className='logo' src="Logo.svg" alt="Logo" />
+                  <img className='logo' src="/Logo.svg" alt="Logo" />
                 </Link>
                 
                 <div className="header-social-links order-sm-2">
