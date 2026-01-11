@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), serif;
 }
 
-.nav-item, .btn, .btn-submit {
+.nav-item, .btn, .btn-submit, .btn-link {
   font-family: var(--font-raleway), sans-serif;
 }
 
@@ -27,13 +27,13 @@ span, a, p, label, li {
 input::placeholder {
   font-family: var(--font-roboto), sans-serif;
   font-style: italic;
-  color: #888; 
+  color: var(--color-text-secondary); 
 }
 
 /* For textarea */
 textarea::placeholder {
   font-family: var(--font-roboto), sans-serif;
-  color: #555;
+  color: var(--color-text-secondary);
 }
 
 
@@ -45,7 +45,7 @@ textarea::placeholder {
   --accent-color: #6B4F8C; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #FFF7ED; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #FFFF; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --color-text-secondary: #4B4B4B; /* Secondary Text */
+  --color-text-secondary: #555; /* Secondary Text */
   --bg-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
@@ -95,6 +95,7 @@ img.logo {
 .header .header-social-links {
   padding-right: 15px;
   margin-left: 0;
+  margin-right: 10px;
 }
 
 .header .header-social-links .link {

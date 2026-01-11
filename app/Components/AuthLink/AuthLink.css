@@ -1,19 +1,51 @@
 .auth-link {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
   margin-left: 15px;
 }
 
 .auth-link span {
-  font-weight: 500;
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 
-.auth-link .btn-link {
-  border: none;
-  background: transparent;
-  color: var(--accent-color, #0d6efd);
+.btn-link {
+  border-radius: 0.3rem;
+  background: var(--accent-color);
+  color: var(--contrast-color);
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+
 }
+
+.btn-link:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 40%);;
+}
+
+/* Hide desktop auth by default (mobile/tablet) */
+.auth-desktop {
+  display: none;
+}
+
+/* Mobile auth styling inside menu */
+.mobile-auth {
+  display: block;
+}
+
+/* Desktop view */
+@media screen and (min-width: 992px) {
+  .auth-desktop {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .mobile-auth {
+    display: none;
+  }
+}
+

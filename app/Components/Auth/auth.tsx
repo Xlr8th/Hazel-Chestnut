@@ -1,10 +1,11 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import "./auth.css";
 
 const Auth: React.FC = () => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(true); // toggle between login & signup
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,18 +18,24 @@ const Auth: React.FC = () => {
     const getUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       setUser(session?.user || null);
+      if (session?.user) {
+        router.push('/')
+      }
     };
 
     getUser();
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user || null);
+      if (session?.user) {
+        router.push('/')
+      }
     });
 
     return () => {
       listener.subscription.unsubscribe();
     };
-  }, []);
+  }, [router]);
 
   // ✅ Login existing user
   const handleLogin = async () => {
@@ -40,8 +47,14 @@ const Auth: React.FC = () => {
       password,
     });
 
-    if (error) alert(error.message);
     setLoading(false);
+
+    if (error) {
+      alert(error.message);
+    } else {
+      router.push('/');
+    }
+
   };
 
   // ✅ Signup new user
@@ -49,7 +62,7 @@ const Auth: React.FC = () => {
     if (!email || !password || !name) return alert("Please fill all fields");
     setLoading(true);
 
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
       options: { data: { full_name: name } },

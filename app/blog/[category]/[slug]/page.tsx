@@ -1,7 +1,7 @@
 import { blogPosts } from "@/lib/blogPosts";
 import { notFound } from "next/navigation";
-import BlogContent from "./components/BlogContent";
-import Comments from "./components/Comments";
+import BlogContent from "../../../Components/BlogContent/BlogContent";
+import Comments from "../../../Components/Comments/Comments";
 
 interface PageProps {
   params: Promise<{

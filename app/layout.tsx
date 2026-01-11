@@ -49,6 +49,9 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
                   <Link href="#" className="facebook link"><i className="bi bi-facebook"></i></Link>
                   <Link href="#" className="instagram link"><i className="bi bi-instagram"></i></Link>
                   <Link href="#" className="linkedin link"><i className="bi bi-linkedin"></i></Link>
+                </div>
+
+                <div className='auth-desktop order-md-3'>
                   <AuthLink />
                 </div>
 
@@ -65,8 +68,10 @@ const RootLayout = ({ children }: {children: ReactNode}) => {
                     <li><Link className='nav-item' href='#About'>About</Link></li>
                     <li><Link className='nav-item' href='/blog'>Categories</Link></li>
                     <li><Link className='nav-item' href='#Novel'>Books</Link></li>
-                    
                     <li><Link className='nav-item' href='#contact'>Contact</Link></li>
+                    <li className='mobile-auth'>
+                      <AuthLink/>
+                    </li>
                   </ul>                
                 </nav>               
 

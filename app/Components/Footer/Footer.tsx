@@ -16,7 +16,7 @@ const Footer = ({tagline}: FooterProps) => {
                 <div className="col-lg-4">
                 <div className="footer-brand">
                     <Link href="#" className="logo d-flex align-items-center mb-3">
-                    <img className='logo' src="Logo.svg" alt="Logo" />
+                    <img className='logo' src="/Logo.svg" alt="Logo" />
                     </Link>
                     <p className="tagline">{tagline}</p>
 
